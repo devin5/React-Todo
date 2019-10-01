@@ -24,13 +24,15 @@ class App extends React.Component {
   }
 
   toggleCompleted = id => {
-    this.state.data.map(item => {
-      console.log("function running ", id);
-      if (id === item.id) {
-        return { completed: !item.completed };
-      } else {
-        return item;
-      }
+    this.setState({
+      data: this.state.data.map(item => {
+        console.log("function running ", id);
+        if (id === item.id) {
+          return { ...item, completed: !item.completed };
+        } else {
+          return item;
+        }
+      })
     });
   };
   // you will need a place to store your state in this component.
