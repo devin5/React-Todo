@@ -23,10 +23,12 @@ class App extends React.Component {
     };
   }
 
-  toggleComplete = id => {
+  toggle = id => {
     this.state.data.map(item => {
       if (item.id === id) {
         return { ...item, completed: !item.completed };
+      } else {
+        return item;
       }
     });
   };
@@ -37,7 +39,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>I Am the Todo List Project</h1>
-        <TodoList toggle={this.toggleComplete} data={this.state.data} />
+        <TodoList toggle={this.toggle} data={this.state.data} />
       </div>
     );
   }

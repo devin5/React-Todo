@@ -10,6 +10,7 @@ class TododoList extends React.Component {
   }
 
   render() {
+    //   note you need this before props from here down to have access to construcotr
     console.log("i am to do list props in return", this.props);
     return (
       <div>
