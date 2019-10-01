@@ -9,12 +9,14 @@ class Todo extends React.Component {
   // this component is going to take care of state, and any change handlers you need to work with your state
   render() {
     return (
-      <h3
-        onClick={this.props.toggle(this.props.item.id)}
-        className={this.props.item.completed ? "" : "completed"}
+      <div
+        className={this.props.item.completed ? "completed" : ""}
+        onClick={e => {
+          this.props.toggle(this.props.item.id);
+        }}
       >
         {this.props.item.task}
-      </h3>
+      </div>
     );
   }
 }
